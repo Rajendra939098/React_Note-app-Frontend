@@ -4,10 +4,10 @@ import NavBar from '.../components/NavBar'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const MainLayout = () => {
+const MainLayout = ({searchText,handleSearchText}) => {
   return (
     <div>
-        <NavBar/>
+        <NavBar searchText={searchText} handleSearchText={handleSearchText}/>
         <ToastContainer position="top-right" autoClose={3000} />
         <Outlet/>
     </div>

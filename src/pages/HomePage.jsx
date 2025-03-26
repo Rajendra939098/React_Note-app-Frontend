@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import NoteCardContainer from "../components/NoteCardContainer";
 import Filter from "../components/Filter";
 
-const HomePage = ({ notes,loading }) => {
+const HomePage = ({ notes,loading ,handleFilterText}) => {
   const [category, setCategory] = useState("all");
 
   console.log("HomePage received notes:", notes);  // Debugging
@@ -13,12 +13,10 @@ const HomePage = ({ notes,loading }) => {
 
   return (
     <div className="home-page">
-      <Filter setCategory={setCategory} />
-      {filteredNotes.length > 0 ? (
-        <NoteCardContainer notes={filteredNotes} loading={loading} />
-      ) : (
-        <p>No notes available.</p>  // Display message if no notes
-      )}
+      
+      {notes.length < 1 ? "" :<Filter setCategory={setCategory} handleFilterText={handleFilterText} />}
+      <NoteCardContainer notes={filteredNotes} loading={loading} />
+      
     </div>
   );
 };

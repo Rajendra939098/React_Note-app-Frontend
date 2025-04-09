@@ -14,4 +14,4 @@ If you are developing a production application, we recommend using TypeScript an
 
 
 Go to this repository https://github.com/Rajendra939098/React_note_app-Backend-Django-.git
-
+the above repository contains code for backend for note app
